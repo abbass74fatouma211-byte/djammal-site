@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJammal 3.0 - Le Maître du Beat</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+            background: radial-gradient(circle at center, #000000 0%, #111111 60%, #000000 100%);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff6600, #ff0066);
+            padding: 30px 10px;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #ff6600; }
+            100% { box-shadow: 0 0 30px #ff0066; }
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-shadow: 0 0 20px #ffaa00;
+        }
+
+        .moving-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: repeating-linear-gradient(45deg, #ff0066, #ff6600 10%, #ff0066 20%);
+            background-size: 400% 400%;
+            animation: moveBG 8s linear infinite;
+            opacity: 0.15;
+        }
+
+        @keyframes moveBG {
+            from { background-position: 0 0; }
+            to { background-position: 400% 400%; }
+        }
+
+        section {
+            padding: 20px 15px;
+        }
+
+        .service {
+            background: rgba(0,0,0,0.7);
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 15px;
+            max-width: 90%;
+            border: 2px solid #ff6600;
+            box-shadow: 0 0 15px #ff6600;
+            transition: transform 0.4s;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            background: linear-gradient(90deg, #ff6600, #ff0066);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px #ff6600;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #ff0066;
+        }
+
+        .pizza {
+            font-size: 3em;
+            animation: spin 6s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        footer {
+            background: #111;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Intro animation */
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 1.8em;
+            z-index: 10;
+            animation: fadeOut 3s ease-in-out 4s forwards;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        #startBtn {
+            background: linear-gradient(90deg, #ff0066, #ff6600);
+            border: none;
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.3em;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 0 25px #ff6600;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .service { font-size: 0.95em; }
+            button { font-size: 1em; padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <p>🎧 Préparation du Mix...</p>
+        <p>تحضير الإيقاع... 🎶</p>
+        <button id="startBtn" onclick="startSite()">Start the Beat 🔊</button>
+    </div>
+
+    <div class="moving-bg"></div>
+    <header>
+        <h1>🎧 DJammal 3.0 🎧</h1>
+        <p>Le DJ, le cuisinier, le mécanicien... et le roi du Beat! 🍕⚡</p>
+    </header>
+
+    <section>
+        <h2>🔥 Les Services Légendaires 🔥</h2>
+        <div class="service">
+            <h3>🎶 DJ Professionnel</h3>
+            <p>"Il mixe des sons pendant qu’il répare une prise électrique!"</p>
+            <button onclick="showMessage('🎵 DJammal balance un beat électrifiant!')">Écouter le son</button>
+        </div>
+
+        <div class="service">
+            <h3>🍕 Chef Pizza & Pasta</h3>
+            <p>Chaque pizza tourne au rythme de la techno... <span class='pizza'>🍕</span></p>
+            <button onclick="showMessage('🍝 Une pizza avec un drop de basse en bonus!')">Commander une pizza</button>
+        </div>
+
+        <div class="service">
+            <h3>⚙️ Réparateur Universel</h3>
+            <p>Il peut réparer ta voiture... en rythme! 🚗🎵</p>
+            <button onclick="showMessage('🔧 DJammal arrive avec ses outils et un mix house!')">Appeler le héros</button>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="color:#ffaa00;">💬 Témoignages</h2>
+        <p><i>"Il a réparé ma voiture et mis le feu à la piste en même temps!"</i> – Client choqué</p>
+        <p><i>"Son spaghetti m’a fait danser le dabke tout seul!"</i> – Maman de DJammal</p>
+    </section>
+
+    <section>
+        <h2>🎤 قسم عربي 🎤</h2>
+        <p style="font-size:1.3em; direction:rtl;">دي جمال مش بس دي جي، هو سوبرمان بكل شي! بيطبخ، بيصلّح، وبيرقص بنفس الوقت 😂</p>
+        <button onclick="showMessage('🤣 دي جمال حالياً بيخلط بيتزا مع بيتس!')">اضغط هون</button>
+    </section>
+
+    <footer>
+        <p>© 2025 DJammal Multiservices - كل الحقوق محفوظة 🚀</p>
+    </footer>
+
+    <audio id="music" loop>
+        <source src="https://cdn.pixabay.com/audio/2023/03/30/audio_23d86a94ee.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function startSite() {
+            const music = document.getElementById('music');
+            music.play().catch(() => alert('Tap again to start music!'));
+            document.getElementById('intro').style.display = 'none';
+        }
+
+        function showMessage(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
